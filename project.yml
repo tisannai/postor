@@ -35,12 +35,9 @@
   # in order to add common defines:
   #  1) remove the trailing [] from the :common: section
   #  2) add entries to the :common: section (e.g. :test: has TEST defined)
-#   :common: &common_defines []
   :test:
-#     - *common_defines
     - TEST
   :test_preprocess:
-#     - *common_defines
     - TEST
 
 :cmock:
@@ -103,7 +100,9 @@
   :release_compiler:
     :executable: gcc
     :arguments:
+      - -DNDEBUG
       - ${1}
+#       - -Wall -fPIC
       - -Wall
 #      - -std=c11
 #      - -g

@@ -10,6 +10,10 @@
  *
  */
 
+/* abu-version */
+#define POSTOR_VERSION "0.0.1"
+
+
 #ifndef SIXTEN_STD_INCLUDE
 #include <stdlib.h>
 #include <stdint.h>
