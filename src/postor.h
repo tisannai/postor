@@ -102,7 +102,7 @@ typedef int ( *po_compare_fn_p )( const po_d a, const po_d b );
  * Make allocation for local (stack) Postor. NOTE: User must make sure
  * the allocation size is valid.
  */
-#define po_local_use( ps, buf, size )                           \
+#define po_use_local( ps, buf, size )                           \
     po_s ps;                                                    \
     /* Legalize the size, i.e. make it even. */                 \
     po_d buf[ ((((size-1)/2)+1)*2)  ];                          \
@@ -180,7 +180,7 @@ extern void* po_realloc( void* ptr, size_t size );
 /* Default to common memory management functions. */
 
 /** Reserve memory. */
-#        define po_malloc( size ) calloc( size, 1 )
+#        define po_malloc( size ) calloc( 1, (size) )
 
 /** Release memory. */
 #        define po_free free

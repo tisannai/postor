@@ -226,7 +226,7 @@ void test_static( void )
     char* str2 = "bbb";
 
 
-    po_local_use( ps, buf, 8 );
+    po_use_local( ps, buf, 8 );
     po = &ps;
 
     TEST_ASSERT_TRUE( po_get_local( po ) );
